@@ -67,3 +67,4 @@ const config = {
 ## Authors
 
 * [Wouter van den Broek](https://twitter.com/wbroek)
+* [Gabriel Alves](https://linkedin/gabrielakalves)

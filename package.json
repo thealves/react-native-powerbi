@@ -1,31 +1,33 @@
 {
-  "name": "react-native-powerbi",
+  "name": "react-native-powerbi-function",
   "version": "0.1.0",
   "description": "PowerBI Embed for React Native",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wbroek/react-native-powerbi.git"
+    "url": "git+https://github.com/thealves/react-native-powerbi.git"
   },
   "keywords": [
     "react",
     "native",
     "powerbi"
   ],
-  "author": "Wouter van den Broek",
+  "author": "TheAlves",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wbroek/react-native-powerbi/issues"
+    "url": "https://github.com/thealves/react-native-powerbi/issues"
   },
-  "homepage": "https://github.com/wbroek/react-native-powerbi#readme",
+  "homepage": "https://github.com/thealves/react-native-powerbi#readme",
   "peerDependencies": {
-    "react": ">= 15.x",
-    "react-native": ">= 0.40.x"
+    "react": "^17.0.2",
+    "react-native": "^0.68.5"
   },
   "dependencies": {
-    "react-native-wkwebview-reborn": ">= 1.0.0"
+    "react-native-webview": "11.26.1"
   },
   "devDependencies": {
-    "babel-preset-react-native": "^4.0.0"
+    "metro-react-native-babel-preset": "^0.67.0",
+    "react": "17.0.2",
+    "react-native": "0.68.5"
   }
 }

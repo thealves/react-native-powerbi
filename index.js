@@ -1,13 +1,17 @@
-import React, { Component } from 'react';
+import React, { useMemo } from 'react';
 import WebView from './components/webView';
 
-class PowerBIEmbed extends Component {
-  constructor(props) {
-    super(props);
-    this.configuration = this.setConfiguration(props);
+const PowerBIEmbed = (props) => {
+
+  const merge = (target, source) => {
+    for (const key of Object.keys(source)) {
+      if (source[key] instanceof Object) Object.assign(source[key], merge(target[key], source[key]));
+    }
+    Object.assign(target || {}, source);
+    return target;
   }
 
-  setConfiguration = (props) => {
+  const html = useMemo(() => {
     let embedConfiguration = {
       type: 'report',
       tokenType: 1,
@@ -28,13 +32,12 @@ class PowerBIEmbed extends Component {
     }
 
     if (('embedConfiguration' in props)) {
-      embedConfiguration = this.merge(embedConfiguration, props.embedConfiguration);
+      embedConfiguration = merge(embedConfiguration, props.embedConfiguration);
     }
 
-    return JSON.stringify(embedConfiguration);
-  }
-
-  getTemplate = configuration => (`<!doctype html>
+    const stringConfiguration = JSON.stringify(embedConfiguration)
+  
+    return (`<!doctype html>
     <html>
     <head>
         <meta charset="utf-8" />
@@ -59,28 +62,18 @@ class PowerBIEmbed extends Component {
         <div id="reportContainer"></div>
         <script>
         var models = window['powerbi-client'].models;
-        var config = ${configuration};
+        var config = ${stringConfiguration};
         var reportContainer = document.getElementById('reportContainer');
         var report = powerbi.embed(reportContainer, config);
         </script>
     </body>
     </html>`
-  );
+  )
+  },[props.embedConfiguration])
 
-  merge = (target, source) => {
-    for (const key of Object.keys(source)) {
-      if (source[key] instanceof Object) Object.assign(source[key], merge(target[key], source[key]));
-    }
-    Object.assign(target || {}, source);
-    return target;
-  }
-
-  render() {
-    const html = this.getTemplate(this.configuration);
     return (
       <WebView source={{ html }} />
     );
-  }
 }
 
-export default PowerBIEmbed;
+export default PowerBIEmbed

@@ -1,8 +1,8 @@
 import React from 'react';
-import WKWebView from 'react-native-wkwebview-reborn';
+import { Webview } from 'react-native-webview';
 
 const webView = props => (
-  <WKWebView {...props} />
+  <Webview {...props} />
 );
 
 export default webView;
