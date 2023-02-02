@@ -3,13 +3,6 @@ import WebView from './components/webView';
 
 const PowerBIEmbed = (props) => {
 
-  const merge = (target, source) => {
-    for (const key of Object.keys(source)) {
-      if (source[key] instanceof Object) Object.assign(source[key], merge(target[key], source[key]));
-    }
-    Object.assign(target || {}, source);
-    return target;
-  }
 
   const html = useMemo(() => {
     let embedConfiguration = {
@@ -32,7 +25,7 @@ const PowerBIEmbed = (props) => {
     }
 
     if (('embedConfiguration' in props)) {
-      embedConfiguration = merge(embedConfiguration, props.embedConfiguration);
+      embedConfiguration = {...embedConfiguration, ...props?.embedConfiguration}
     }
 
     const stringConfiguration = JSON.stringify(embedConfiguration)
