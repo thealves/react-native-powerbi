@@ -19,8 +19,8 @@
   },
   "homepage": "https://github.com/thealves/react-native-powerbi#readme",
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-native": "^0.68.5"
+    "react": "*",
+    "react-native": "*"
   },
   "dependencies": {
     "react-native-webview": "11.26.1"
