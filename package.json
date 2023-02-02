@@ -1,6 +1,6 @@
 {
   "name": "react-native-powerbi-function",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "PowerBI Embed for React Native",
   "main": "index.js",
   "repository": {
