@@ -3,7 +3,6 @@ import WebView from './components/webView';
 
 const PowerBIEmbed = (props) => {
 
-
   const html = useMemo(() => {
     let embedConfiguration = {
       type: 'report',
@@ -44,6 +43,7 @@ const PowerBIEmbed = (props) => {
                 margin: 0;
                 background-color: 'white';
                 -webkit-overflow-scrolling: touch;
+                transform: ${props?.landscape ? 'rotate(90deg)' : 'rotate(0deg)'};
             }
             iframe {
                 border: 0px
@@ -62,7 +62,7 @@ const PowerBIEmbed = (props) => {
     </body>
     </html>`
   )
-  },[props.embedConfiguration])
+  },[props])
 
     return (
       <WebView source={{ html }} />
