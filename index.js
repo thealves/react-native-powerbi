@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import WebView from './components/webView';
+import { WebView } from 'react-native-webview';
 
 const PowerBIEmbed = (props) => {
 
