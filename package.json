@@ -1,6 +1,6 @@
 {
   "name": "react-native-powerbi-function",
-  "version": "0.6.0",
+  "version": "0.8.0",
   "description": "PowerBI Embed for React Native",
   "main": "index.js",
   "repository": {
@@ -23,7 +23,7 @@
     "react-native": "*"
   },
   "dependencies": {
-    "react-native-webview": "11.2.3"
+    "react-native-webview": "11.23.1"
   },
   "devDependencies": {
     "metro-react-native-babel-preset": "^0.67.0",
