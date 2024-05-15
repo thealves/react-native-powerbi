@@ -23,11 +23,11 @@
     "react-native": "*"
   },
   "dependencies": {
-    "react-native-webview": "11.23.1"
+    "react-native-webview": "13.6.1"
   },
   "devDependencies": {
-    "metro-react-native-babel-preset": "^0.67.0",
-    "react": "17.0.2",
-    "react-native": "0.68.5"
+    "@react-native/babel-preset": "^0.74.81",
+    "react": "18.2.0",
+    "react-native": "^0.74"
   }
 }
